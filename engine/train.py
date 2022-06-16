@@ -23,12 +23,12 @@ def run(fold, model):
     df_valid = df[df.kfold == fold].reset_index(drop=True)
 
     #drop the target column from the dataframe and convert it to a numpy array
-    x_train = df_train.drop(['Survived', 'PassengerId'], axis=1).values
-    y_train = df_train.Survived.values
+    x_train = df_train.drop(['Transported'], axis=1).values
+    y_train = df_train.Transported.values
 
     #same for validataion:
-    x_valid = df_valid.drop(['Survived', 'PassengerId'], axis=1).values
-    y_valid = df_valid.Survived.values
+    x_valid = df_valid.drop(['Transported'], axis=1).values
+    y_valid = df_valid.Transported.values
 
     #the model is imported:
     clf = model_dispatcher.models[model]
@@ -39,7 +39,7 @@ def run(fold, model):
     print(preds[:10])
 
 
-    accuracy = metrics.accuracy_score(y_valid, preds)
+    accuracy = metrics.f1_score(y_valid, preds)
     print(f'Fold = {fold}, Accuracy = {accuracy}')
 
     #save the model.

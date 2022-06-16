@@ -18,7 +18,7 @@ if __name__ == '__main__':
     df = df.sample(frac = 1).reset_index(drop=True)
 
     #fetch targets (in this case survived)
-    y = df.Survived.values
+    y = df.Transported.values
 
     #get the kfolds from the model selection module
     kf = model_selection.StratifiedKFold(n_splits=10)
@@ -28,6 +28,6 @@ if __name__ == '__main__':
         df.loc[val_, 'kfold'] = fold
     
     #save for new csv:
-    df.to_csv('/Users/ethan/Desktop/Ethan/Python/ML/framework/input/titanic/titanic_folds.csv', index=False)
+    df.to_csv('/Users/ethan/Desktop/Ethan/Python/ML/framework/input/spaceship-titanic/titanic_folds.csv', index=False)
 
 
