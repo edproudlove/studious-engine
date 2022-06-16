@@ -18,7 +18,8 @@ def run_final():
     x_test = pd.read_csv(config.TEST_FILE)
     x_test = x_test.drop(['PassengerId'], axis=1)
 
-    clf = SVC()
+    #clf = SVC(class_weight=None, gamma='auto', C=1)
+    clf = ensemble.RandomForestClassifier(criterion = 'gini', max_depth = 7, max_features = 'auto', n_estimators = 200)
     clf.fit(x_train, y_train)
 
     preds = clf.predict(x_test)

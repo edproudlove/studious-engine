@@ -47,4 +47,5 @@ after doing some testing I am going to try the svc with the median input for the
 ##### FOR THE SPACE - TITANIC #####
 
 - First run - 0.77577 with svg and with feature importnaces and no model optimization.
-
+- seocnd run -0.76689 with svg and with the model optimisation
+- third run - 0.78349 with a random forrest that had been optimised 
