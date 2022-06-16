@@ -1,0 +1,46 @@
+you can turn continus data into categories woith bins using the opandas pd.cut fn]
+however this may need to be done manually
+
+if somthuing has a high variance consider a log transformation
+
+if you have nans for a categorical data you treat them as a new category.
+
+for numerical ones you can either train a regression model to predict them or instead use
+the nearest neighbours ,ethrod instead
+
+if we arew using tree based models we done need to bother.
+
+features with very low variance are not changing alot and are therefore considerd useless.
+sklearn has a variance threshold func that can do this.
+
+we can also remove features that are highly correleated to one another.
+pearson correlation
+
+good code for univariate feature selection
+
+we can use a ml model to select good features.
+greedy feature selection.
+
+there is a good code example of greedy selectionin the book.
+
+recuresive feature eleimination is also a good option.
+sklearn comes with this:
+
+we can aslo use model.feature_importances_
+
+we can use randomised search CV for hyperparameter tuning.
+you can also pass a pipeline of models into the searchCV class.
+
+good section of code for minimising the negative of the accuracy funtion 
+giid table on pg 184.
+
+first exploration
+then feature_explination
+then create_folds 
+then test with the --args
+finally the final_test.
+
+I am going to try this whole process for the space titanic version and see what accuracy I can get:
+
+
+
