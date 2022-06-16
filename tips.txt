@@ -43,3 +43,8 @@ finally the final_test.
 I am going to try this whole process for the space titanic version and see what accuracy I can get:
 after doing some testing I am going to try the svc with the median input for the numerical values where they have no value;
 
+
+##### FOR THE SPACE - TITANIC #####
+
+- First run - 0.77577 with svg and with feature importnaces and no model optimization.
+
