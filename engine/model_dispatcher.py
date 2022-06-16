@@ -19,10 +19,6 @@ models = {
     'svc': SVC(),
     'k_nearest': KNeighborsClassifier()
 
-    
-
-
-
 }
 
 ## list of commands:
@@ -34,3 +30,5 @@ models = {
 #  python train.py --fold 0 --model k_nearest
 
 #rf and xgboost are the best atm.
+# use: bash run_tests.sh
+#then put the no folds and the model in.

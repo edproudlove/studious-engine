@@ -21,7 +21,7 @@ if __name__ == '__main__':
     y = df.Transported.values
 
     #get the kfolds from the model selection module
-    kf = model_selection.StratifiedKFold(n_splits=10)
+    kf = model_selection.StratifiedKFold(n_splits=5)
 
     #fill in the kfold col
     for fold, (trn_, val_) in enumerate(kf.split(X=df, y=y)):

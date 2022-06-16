@@ -14,7 +14,7 @@ import model_dispatcher
 def run(fold, model):
     #read training data with folds
     df = pd.read_csv(config.TRAINING_FILE)
-    print(df)
+
     #training data is all the folds except the fold that is given 
     #also reset the index
     df_train = df[df.kfold != fold].reset_index(drop=True)
@@ -36,8 +36,6 @@ def run(fold, model):
 
     #create predictions and print the evaluations
     preds = clf.predict(x_valid)
-    print(preds[:10])
-
 
     accuracy = metrics.f1_score(y_valid, preds)
     print(f'Fold = {fold}, Accuracy = {accuracy}')
