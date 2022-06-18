@@ -17,7 +17,7 @@ models = {
     'rf': ensemble.RandomForestClassifier(),
     'xgb': XGBClassifier(),
     'svc': SVC(),
-    'k_nearest': KNeighborsClassifier()
+    'k_nearest': KNeighborsClassifier(),
 
 }
 

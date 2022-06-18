@@ -1,6 +1,6 @@
 from sklearn import ensemble
 from sklearn.svm import SVC
-
+from xgboost import XGBClassifier
 import pandas as pd
 import numpy as np
 
@@ -19,7 +19,11 @@ def run_final():
     x_test = x_test.drop(['PassengerId'], axis=1)
 
     #clf = SVC(class_weight=None, gamma='auto', C=1)
-    clf = ensemble.RandomForestClassifier(criterion = 'gini', max_depth = 7, max_features = 'auto', n_estimators = 200)
+    #clf = ensemble.RandomForestClassifier(criterion = 'gini', max_depth = 7, max_features = 'auto', n_estimators = 200)
+    clf = XGBClassifier(
+        alpha= 0, eta = 0.01, gamma = 0.1, max_depth = 10, min_child_weight= 7 
+        )
+
     clf.fit(x_train, y_train)
 
     preds = clf.predict(x_test)
